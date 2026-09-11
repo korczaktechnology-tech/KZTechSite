@@ -1,29 +1,16 @@
 # Deploy
 
-## Pipeline
+## Render — aplicação integrada
 
-A publicação deve seguir a ordem arquitetural:
+Use Node 22+.
 
-1. Checkout.
-2. Instalação determinística.
-3. Lint.
-4. Type check.
-5. Testes unitários.
-6. Testes de integração.
-7. Build.
-8. Testes E2E em ambiente apropriado.
-9. Staging.
-10. Homologação.
-11. Production.
-12. Smoke test.
-13. Registro da versão.
+- Build command: `npm install`
+- Start command: `npm run dev`
+- Health check: `/health/ready`
+- Environment: `NODE_ENV=production`, `MONGODB_URI=<secret>`, `MONGODB_DB_NAME=KZTechSite`.
 
-Uma falha crítica interrompe a publicação.
+O processo Node serve simultaneamente os arquivos estáticos e a API. Assim, formulários e autenticação usam a mesma origem.
 
-## Ambientes
+## GitHub Pages
 
-Use variáveis distintas para development, staging e production. Nunca coloque senha, token ou credencial no código.
-
-## Infraestrutura prevista
-
-A arquitetura prevê GitHub/GitHub Actions para código e automações e Render para serviços hospedados. CDN, e-mail e Stripe entram conforme necessidade das etapas posteriores.
+O workflow `.github/workflows/ci.yml` publica a árvore estática do branch `site`. Ele não fornece o backend MongoDB; para os fluxos de conta, contato e proposta, use a implantação integrada no Render ou configure uma API pública compatível.
