@@ -1,23 +1,19 @@
-name: CI and GitHub Pages
-
+name: Static site CI and GitHub Pages
 on:
   push:
-    branches: [main, stage-1-foundation, foundation-01, design-system-02]
+    branches: [site]
   pull_request:
-    branches: [main]
+    branches: [site]
   workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 concurrency:
   group: pages
   cancel-in-progress: true
-
 jobs:
-  foundation:
+  validate-and-deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -25,32 +21,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Install dependencies
-        run: npm install
-      - name: Validate workspace
-        run: npm run build
-      - name: Validate source syntax
-        run: npm run lint
-      - name: Tests
-        run: npm test
-      - name: Build GitHub Pages bundle
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+      - name: Validate static structure
+        shell: bash
         run: |
-          npm run build --workspace=@korczak/web
-          cp apps/web/dist/index.html apps/web/dist/404.html
+          set -euo pipefail
+          test -f index.html
+          test -f assets/css/base.css
+          test -f assets/js/main.js
+          test -f .nojekyll
+          test "$(grep -c '<!doctype html>' index.html)" -eq 1
+          ! grep -R -nE 'from ["'"']react|vite|createRoot|ReactDOM' index.html assets pages 2>/dev/null
+      - name: Validate backend syntax
+        run: node --check apps/api/src/server.mjs
       - name: Setup Pages
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
         with:
-          path: apps/web/dist
+          path: .
       - name: Deploy to GitHub Pages
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        if: github.event_name != 'pull_request'
         id: deployment
         uses: actions/deploy-pages@v4
