@@ -1,0 +1,16 @@
+{
+  "name": "korczak-technologies-site",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Site institucional e comercial da Korczak Technologies.",
+  "workspaces": ["apps/web", "apps/api", "packages/shared"],
+  "scripts": {
+    "dev": "npm run dev --workspace=@korczak/web",
+    "dev:api": "npm run dev --workspace=@korczak/api",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "engines": { "node": ">=22" }
+}
