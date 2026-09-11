@@ -24,5 +24,6 @@ export const products = [
 ];
 
 export const independentProducts = [
-  { slug: 'korczak-ai', name: 'Korczak AI', description: 'Inteligência artificial da Korczak Technologies.' },
+  { slug: 'korczak-ai', name: 'Korczak AI', label: 'Inteligência artificial', description: 'Inteligência artificial da Korczak Technologies.' },
+  { slug: 'aurora-ide', name: 'Aurora IDE', label: 'Ambiente de desenvolvimento integrado', description: 'Ambiente de desenvolvimento integrado da Korczak Technologies.' },
 ];
