@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://korczaktechnology-tech.github.io/KZTechSite/sitemap.xml
