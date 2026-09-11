@@ -21,6 +21,12 @@
 
   document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 
+  document.querySelectorAll('.media-slot img').forEach(img => {
+    const markMissing = () => img.classList.add('is-missing');
+    img.addEventListener('error', markMissing, { once: true });
+    if (img.complete && img.naturalWidth === 0) markMissing();
+  });
+
   const setStatus = (form, message, type = '') => {
     const status = $('.form-status', form);
     if (!status) return;
