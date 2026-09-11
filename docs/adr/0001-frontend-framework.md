@@ -1,25 +1,18 @@
-# ADR 0001 — Framework do frontend
+# ADR 0001 — Frontend sem framework
 
 ## Status
-
-Aceito na Etapa 2.
+Aceito.
 
 ## Contexto
+O site precisa ser leve, portável, simples de publicar e fácil de manter, sem transformar uma presença institucional em uma dependência desnecessária de framework.
 
-A arquitetura exige uma camada de frontend reutilizavel, roteamento central, separacao entre apresentacao e acesso a dados, cliente de API, respostas tipadas quando aplicavel, lazy loading, boundary de erro e pagina 404.
+## Decisão
+O frontend será HTML5 + CSS3 + JavaScript puro. O backend permanece Node.js e MongoDB.
 
-A especificacao nao fixa um framework especifico. A decisao precisa ser registrada para evitar uma escolha implicita durante a implementacao.
+## Consequências
+**Positivas:** menor superfície de dependências, publicação direta, carregamento simples, URLs estáticas e manutenção acessível.
 
-## Decisao
+**Negativas:** recursos complexos precisam ser implementados explicitamente; não há roteamento SPA ou componentes React prontos.
 
-Adotar **React + Vite** para `apps/web`.
-
-- React fornece a camada de componentes reutilizaveis necessaria ao Design System.
-- Vite fornece desenvolvimento local e build de producao simples e rapido.
-- React Router fornece roteamento centralizado para as rotas canonicas.
-- A aplicacao continua isolada em `apps/web`, sem acesso direto ao MongoDB.
-- A camada de API permanece em `apps/api` e sera integrada em etapa posterior.
-
-## Consequencias
-
-A partir desta decisao, novos componentes visuais, layouts e rotas do site devem ser implementados sobre React. A Etapa 2 cria somente a fundacao visual e de navegacao; autenticacao, persistencia, formularios conectados, integracoes e demais comportamentos de negocio permanecem para as etapas previstas na arquitetura.
+## Escopo
+Esta decisão não impede que produtos independentes da Korczak Technologies usem stacks diferentes. Ela se aplica ao site institucional/comercial deste repositório.
