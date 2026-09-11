@@ -25,5 +25,4 @@ export const products = [
 
 export const independentProducts = [
   { slug: 'korczak-ai', name: 'Korczak AI', description: 'Inteligência artificial da Korczak Technologies.' },
-  { slug: 'moon', name: 'Moon', description: 'Produto independente da Korczak Technologies.' },
 ];
