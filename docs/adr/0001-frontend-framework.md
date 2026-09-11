@@ -2,18 +2,24 @@
 
 ## Status
 
-Pendente de decisão na etapa de Design System.
+Aceito na Etapa 2.
 
 ## Contexto
 
-A arquitetura exige uma camada de frontend reutilizável, roteamento central, separação entre apresentação e acesso a dados, cliente de API, respostas tipadas quando aplicável, lazy loading, boundary de erro e página 404.
+A arquitetura exige uma camada de frontend reutilizavel, roteamento central, separacao entre apresentacao e acesso a dados, cliente de API, respostas tipadas quando aplicavel, lazy loading, boundary de erro e pagina 404.
 
-A especificação recomenda registrar a escolha do framework como uma decisão arquitetural, mas não fixa um framework específico.
+A especificacao nao fixa um framework especifico. A decisao precisa ser registrada para evitar uma escolha implicita durante a implementacao.
 
-## Decisão nesta etapa
+## Decisao
 
-Não congelar um framework por inferência. A fundação mantém a fronteira `apps/web` independente para que a escolha seja feita antes da implementação do Design System.
+Adotar **React + Vite** para `apps/web`.
 
-## Consequência
+- React fornece a camada de componentes reutilizaveis necessaria ao Design System.
+- Vite fornece desenvolvimento local e build de producao simples e rapido.
+- React Router fornece roteamento centralizado para as rotas canonicas.
+- A aplicacao continua isolada em `apps/web`, sem acesso direto ao MongoDB.
+- A camada de API permanece em `apps/api` e sera integrada em etapa posterior.
 
-A Etapa 1 permanece executável como base técnica, enquanto a decisão definitiva de framework fica registrada e explícita, sem criar uma dependência não determinada pela arquitetura.
+## Consequencias
+
+A partir desta decisao, novos componentes visuais, layouts e rotas do site devem ser implementados sobre React. A Etapa 2 cria somente a fundacao visual e de navegacao; autenticacao, persistencia, formularios conectados, integracoes e demais comportamentos de negocio permanecem para as etapas previstas na arquitetura.
