@@ -1,19 +1,23 @@
 name: Static site CI and GitHub Pages
+
 on:
   push:
     branches: [site]
   pull_request:
     branches: [site]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: pages
   cancel-in-progress: true
+
 jobs:
-  validate-and-deploy:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,14 +30,23 @@ jobs:
         run: node scripts/validate-static.mjs
       - name: Validate backend syntax
         run: node --check apps/api/src/server.mjs
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Setup Pages
-        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
-        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
         with:
           path: .
       - name: Deploy to GitHub Pages
-        if: github.event_name != 'pull_request'
+        id: deployment
         uses: actions/deploy-pages@v4
