@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 export function Logo() {
@@ -12,7 +13,8 @@ export function Button({ children, to, variant = 'primary', ...props }) {
 const nav = [['Institucional', '/institucional'], ['Solucoes', '/solucoes'], ['KOS', '/kos'], ['Portfolio', '/portfolio'], ['Contato', '/contato']];
 
 export function Header() {
-  return <header className="site-header"><div className="container header-inner"><Logo /><nav className="main-nav" aria-label="Navegacao principal">{nav.map(([label, path]) => <NavLink key={path} to={path} className={({isActive}) => isActive ? 'active' : ''}>{label}</NavLink>)}</nav><Button to="/contato">Falar com a Korczak</Button></div></header>;
+  const [open, setOpen] = useState(false);
+  return <header className="site-header"><div className="container header-inner"><Logo /><button className="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded={open} onClick={() => setOpen(!open)}>☰</button><nav className={open ? 'main-nav is-open' : 'main-nav'} aria-label="Navegacao principal">{nav.map(([label, path]) => <NavLink key={path} to={path} onClick={() => setOpen(false)} className={({isActive}) => isActive ? 'active' : ''}>{label}</NavLink>)}</nav><Button to="/contato">Falar com a Korczak</Button></div></header>;
 }
 
 export function Footer() {
