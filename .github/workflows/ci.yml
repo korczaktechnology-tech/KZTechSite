@@ -21,16 +21,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Validate static structure
-        shell: bash
-        run: |
-          set -euo pipefail
-          test -f index.html
-          test -f assets/css/base.css
-          test -f assets/js/main.js
-          test -f .nojekyll
-          test "$(grep -c '<!doctype html>' index.html)" -eq 1
-          ! grep -R -nE 'from ["'"']react|vite|createRoot|ReactDOM' index.html assets pages 2>/dev/null
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate static structure and links
+        run: node scripts/validate-static.mjs
       - name: Validate backend syntax
         run: node --check apps/api/src/server.mjs
       - name: Setup Pages
