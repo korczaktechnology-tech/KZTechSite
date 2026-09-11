@@ -1,39 +1,42 @@
-# Arquitetura — Korczak Technologies Site
+# Arquitetura do site Korczak Technologies
 
-## Estado
+## 1. Princípio
 
-As cinco etapas planejadas foram implementadas progressivamente na `main`: fundação, design system/navegação, frontend institucional/portfólio, API/persistência e qualidade/operação.
+O site é uma aplicação institucional e comercial com frontend estático e backend separado logicamente. O frontend não acessa MongoDB. Toda persistência passa pela API.
 
-## Estrutura
+## 2. Frontend
 
-- `apps/web`: React/Vite, rotas institucionais, catálogo, formulários e estados de interface.
-- `apps/api`: API Node.js, validação, MongoDB, health checks e contratos de resposta.
-- `packages/shared`: contratos compartilhados entre camadas.
-- `docs`: arquitetura, deploy, backup e decisões.
-- `.github/workflows`: CI.
+HTML5 semântico, CSS responsivo e JavaScript puro. Os arquivos são independentes de framework e usam caminhos relativos para funcionar tanto no GitHub Pages quanto em um servidor próprio.
 
-## Ambientes
+Camadas:
+- conteúdo e navegação em `index.html` e `pages/`;
+- tokens, componentes visuais e responsividade em `assets/css/base.css`;
+- comportamento global e formulários em `assets/js/main.js`.
 
-- `development`: execução local e dados de teste.
-- `staging`: homologação próxima de produção.
-- `production`: dados reais e regras máximas de segurança.
+## 3. Backend
 
-Cada ambiente deve possuir configuração própria. Segredos nunca entram no repositório.
+`apps/api/src/server.mjs` usa Node.js e MongoDB. A mesma aplicação pode servir os arquivos estáticos e a API, eliminando o problema de CORS em produção.
 
-## Princípios obrigatórios
+Contrato de resposta:
+`{ success: boolean, data?: object, error?: { code, message }, requestId: string }`.
 
-1. O frontend nunca acessa MongoDB diretamente.
-2. A API é a fronteira para autenticação, autorização, formulários e persistência.
-3. A conexão MongoDB é reutilizada pelo backend, não criada por requisição.
-4. Respostas seguem `success/data/error/requestId`.
-5. A interface não deve possuir ações decorativas: ações precisam de destino e estados apropriados.
-6. Conteúdo KOS e produtos independentes permanece separado.
-7. `main` representa a linha de produção.
+Endpoints principais:
+- `GET /health`, `/health/live`, `/health/ready`;
+- `GET /api/v1/catalog`;
+- `POST /api/v1/auth/register`;
+- `POST /api/v1/auth/login`;
+- `GET /api/v1/me`;
+- `POST /api/v1/contacts`;
+- `POST /api/v1/quotes`.
 
-## Produção
+## 4. Segurança
 
-A API oferece `/health`, `/health/live` e `/health/ready`. O último valida a disponibilidade do MongoDB quando configurado. O CI executa build, lint/sintaxe e testes. A interface possui foco acessível, estados de envio e suporte a redução de movimento.
+Validação no servidor, limites de tamanho, rate limiting básico, hash de senha com `scrypt`, tokens de sessão armazenados como hash, índices MongoDB, cabeçalhos de segurança e respostas sem exposição de detalhes internos.
 
-## Pendências explícitas
+## 5. Domínios
 
-Autenticação completa de usuários, recuperação de senha, área autenticada, gestão de perfil e administração de contatos/orçamentos permanecem como evolução da camada comercial. Não são simuladas como concluídas.
+O KOS é separado dos produtos independentes. O catálogo pode anunciar contratos e integrações futuras sem afirmar disponibilidade inexistente.
+
+## 6. Operação
+
+CI valida HTML, links locais e sintaxe do backend. A publicação estática usa GitHub Pages. Para um ambiente integrado, o Node pode servir o site e a API no mesmo processo.
