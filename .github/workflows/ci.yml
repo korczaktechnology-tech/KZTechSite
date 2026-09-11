@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main, stage-1-foundation, foundation-01]
+  pull_request:
+    branches: [main]
+
+jobs:
+  foundation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Validate workspace
+        run: npm run build
+
+      - name: Validate source syntax
+        run: npm run lint
+
+      - name: Tests
+        run: npm test
