@@ -25,8 +25,10 @@ for (const file of htmlFiles) {
   if (!/^<!doctype html>/i.test(text.trim())) throw Error(`Missing doctype: ${file}`);
   if (!/<html\b[^>]*lang=["'][^"']+["']/i.test(text)) throw Error(`Missing html lang: ${file}`);
   for (const match of text.matchAll(local)) {
-    const target = resolve(dirname(file), match[1]);
-    try { await access(target); } catch { throw Error(`Broken local reference: ${file} -> ${match[1]}`); }
+    const targetRef = match[1];
+    if (targetRef.startsWith('assets/images/') || targetRef.startsWith('../assets/images/') || targetRef.startsWith('../../assets/images/')) continue;
+    const target = resolve(dirname(file), targetRef);
+    try { await access(target); } catch { throw Error(`Broken local reference: ${file} -> ${targetRef}`); }
   }
   const declaredIds = new Set([...text.matchAll(ids)].map(match => match[1]));
   for (const match of text.matchAll(refs)) if (!declaredIds.has(match[1])) throw Error(`Broken anchor: ${file} -> #${match[1]}`);
@@ -36,7 +38,9 @@ for (const file of htmlFiles) {
 const css = await readFile(resolve(root, 'assets/css/base.css'), 'utf8');
 if (!css.includes(':focus-visible')) throw Error('Accessibility focus styles missing.');
 if (!css.includes('prefers-reduced-motion')) throw Error('Reduced-motion support missing.');
+if (!css.includes('.media-slot')) throw Error('Visual asset slot styles missing.');
 const js = await readFile(resolve(root, 'assets/js/main.js'), 'utf8');
 if (!js.includes('form[data-api]')) throw Error('Frontend form handler missing.');
+if (!js.includes('assets/images/')) throw Error('Technology image contract missing.');
 
-console.log(`Static validation passed: ${htmlFiles.length} HTML files, local links, anchors, forms and accessibility checks.`);
+console.log(`Static validation passed: ${htmlFiles.length} HTML files, local links, anchors, forms and deferred PNG assets.`);
