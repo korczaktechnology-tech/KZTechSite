@@ -57,9 +57,13 @@
       .join("");
   });
 
-  const selectedModule = new URLSearchParams(window.location.search).get("modulo");
+  const selectedModule = new URLSearchParams(window.location.search).get(
+    "modulo",
+  );
   if (selectedModule) {
-    const module = kosModules.find(([name]) => name === selectedModule.toUpperCase());
+    const module = kosModules.find(
+      ([name]) => name === selectedModule.toUpperCase(),
+    );
     if (module) {
       const [name, description] = module;
       const title = $("[data-module-title]");
