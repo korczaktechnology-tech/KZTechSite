@@ -307,15 +307,13 @@ async function handler(req, res) {
           },
           id,
         );
-      const r = await ref
-        .collection("users")
-        .insertOne({
-          name,
-          email,
-          passwordHash: passwordHash(password),
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        });
+      const r = await ref.collection("users").insertOne({
+        name,
+        email,
+        passwordHash: passwordHash(password),
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
       return response(
         res,
         201,
@@ -342,14 +340,12 @@ async function handler(req, res) {
           id,
         );
       const raw = token();
-      await ref
-        .collection("sessions")
-        .insertOne({
-          userId: user._id,
-          tokenHash: hash(raw),
-          createdAt: new Date(),
-          expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24 * 7),
-        });
+      await ref.collection("sessions").insertOne({
+        userId: user._id,
+        tokenHash: hash(raw),
+        createdAt: new Date(),
+        expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24 * 7),
+      });
       return response(
         res,
         200,
@@ -416,17 +412,15 @@ async function handler(req, res) {
           },
           id,
         );
-      const r = await ref
-        .collection("contacts")
-        .insertOne({
-          name,
-          email,
-          subject,
-          message,
-          status: "new",
-          createdAt: new Date(),
-          requestId: id,
-        });
+      const r = await ref.collection("contacts").insertOne({
+        name,
+        email,
+        subject,
+        message,
+        status: "new",
+        createdAt: new Date(),
+        requestId: id,
+      });
       return response(
         res,
         201,
@@ -458,18 +452,16 @@ async function handler(req, res) {
           },
           id,
         );
-      const r = await ref
-        .collection("quotes")
-        .insertOne({
-          name,
-          email,
-          company,
-          product,
-          message,
-          status: "new",
-          createdAt: new Date(),
-          requestId: id,
-        });
+      const r = await ref.collection("quotes").insertOne({
+        name,
+        email,
+        company,
+        product,
+        message,
+        status: "new",
+        createdAt: new Date(),
+        requestId: id,
+      });
       return response(
         res,
         201,
