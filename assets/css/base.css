@@ -227,6 +227,15 @@ button:disabled {
   gap: 18px;
 }
 
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.grid-2 > .card {
+  height: 100%;
+}
+
 .grid-3 {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -442,6 +451,31 @@ form {
   background: var(--surface-2);
 }
 
+.module-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.module-gallery figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.module-gallery .media-slot {
+  height: 260px;
+  margin: 0;
+  border-style: solid;
+  background: var(--surface);
+}
+
+.module-gallery figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .success {
   color: var(--success);
 }
@@ -513,7 +547,12 @@ form {
   }
 
   .grid-3,
-  .catalog {
+  .catalog,
+  .module-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 {
     grid-template-columns: 1fr;
   }
 
@@ -526,6 +565,10 @@ form {
     right: 18px;
     width: 92px;
     height: 92px;
+  }
+
+  .module-gallery .media-slot {
+    height: 220px;
   }
 
   .hero {
