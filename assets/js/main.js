@@ -47,14 +47,35 @@
     ["DOCUMENTS", "Documentos, organização e rastreabilidade."],
     ["AUDIT", "Auditoria, histórico e rastreabilidade."],
   ];
+
   document.querySelectorAll("[data-kos-catalog]").forEach((catalog) => {
     catalog.innerHTML = kosModules
       .map(
         ([name, description]) =>
-          `<article class="card"><div class="media-slot"><img src="../assets/images/${name}.png" alt="KORCZAK ${name}"></div><span class="tag">KOS</span><h3>${name}</h3><p>${description}</p></article>`,
+          `<article class="card"><div class="media-slot"><img src="../assets/images/${name}.png" alt="KORCZAK ${name}"></div><span class="tag">KOS</span><h3>${name}</h3><p>${description}</p><a class="button button-small" href="modulo.html?modulo=${name}">Acessar →</a></article>`,
       )
       .join("");
   });
+
+  const selectedModule = new URLSearchParams(window.location.search).get("modulo");
+  if (selectedModule) {
+    const module = kosModules.find(([name]) => name === selectedModule.toUpperCase());
+    if (module) {
+      const [name, description] = module;
+      const title = $("[data-module-title]");
+      const moduleName = $("[data-module-name]");
+      const moduleDescription = $("[data-module-description]");
+      const image = $("[data-module-image]");
+      if (title) title.textContent = `Acesso ao KORCZAK ${name}`;
+      if (moduleName) moduleName.textContent = `KORCZAK ${name}`;
+      if (moduleDescription) moduleDescription.textContent = description;
+      if (image) {
+        image.src = `../assets/images/${name}.png`;
+        image.alt = `KORCZAK ${name}`;
+      }
+      document.title = `KORCZAK ${name} — Acesso`;
+    }
+  }
 
   document.querySelectorAll(".media-slot img").forEach((img) => {
     const markMissing = () => img.classList.add("is-missing");
@@ -117,6 +138,7 @@
       }
     }),
   );
+
   const token = localStorage.getItem("kz_session");
   const accountStatus = $("[data-account-status]");
   if (token && accountStatus)
@@ -133,6 +155,7 @@
         localStorage.removeItem("kz_session");
         accountStatus.textContent = "Nenhuma sessão ativa.";
       });
+
   document.querySelectorAll("[data-logout]").forEach((button) =>
     button.addEventListener("click", () => {
       localStorage.removeItem("kz_session");
