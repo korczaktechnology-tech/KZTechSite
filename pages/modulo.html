@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="Informações, posicionamento e aplicações dos módulos do KORCZAK Operations System." />
+    <meta
+      name="description"
+      content="Informações, posicionamento e aplicações dos módulos do KORCZAK Operations System."
+    />
     <title>Módulo KOS</title>
     <link rel="stylesheet" href="../assets/css/base.css" />
     <script defer src="../assets/js/main.js"></script>
@@ -13,7 +16,10 @@
       <header class="page-header">
         <div class="eyebrow">KOS · MÓDULO</div>
         <h1 data-module-title>Módulo KOS</h1>
-        <p class="lead" data-module-description>Conheça o posicionamento, funcionamento e possibilidades de composição do módulo dentro do KORCZAK Operations System.</p>
+        <p class="lead" data-module-description>
+          Conheça o posicionamento, funcionamento e possibilidades de composição
+          do módulo dentro do KORCZAK Operations System.
+        </p>
       </header>
 
       <section class="card">
@@ -22,14 +28,45 @@
         </div>
         <span class="tag">KOS</span>
         <h2 data-module-name>Módulo KOS</h2>
-        <p data-module-overview>Esta página apresenta o papel do módulo dentro da arquitetura KOS e como ele pode ser combinado com os demais módulos.</p>
+        <p data-module-overview>
+          Esta página apresenta o papel do módulo dentro da arquitetura KOS e
+          como ele pode ser combinado com os demais módulos.
+        </p>
       </section>
 
       <section class="grid grid-2">
-        <article class="card"><span class="tag">FUNCIONAMENTO</span><h2>Como funciona</h2><p data-module-how>Informações sobre a finalidade, funcionamento e principais usos do módulo.</p></article>
-        <article class="card"><span class="tag">POSICIONAMENTO</span><h2>Onde recomendamos colocar</h2><p data-module-placement>A recomendação de posicionamento varia conforme a estrutura e os processos da empresa.</p></article>
-        <article class="card"><span class="tag">COMPOSIÇÃO</span><h2>Sozinho ou junto de outros?</h2><p data-module-alone>O módulo pode ser utilizado isoladamente ou combinado com outros componentes do KOS, conforme a necessidade da operação.</p></article>
-        <article class="card"><span class="tag">INTEGRAÇÃO</span><h2>Combina bem com</h2><p data-module-companions>Os módulos complementares serão apresentados aqui de acordo com a função de cada módulo.</p></article>
+        <article class="card">
+          <span class="tag">FUNCIONAMENTO</span>
+          <h2>Como funciona</h2>
+          <p data-module-how>
+            Informações sobre a finalidade, funcionamento e principais usos do
+            módulo.
+          </p>
+        </article>
+        <article class="card">
+          <span class="tag">POSICIONAMENTO</span>
+          <h2>Onde recomendamos colocar</h2>
+          <p data-module-placement>
+            A recomendação de posicionamento varia conforme a estrutura e os
+            processos da empresa.
+          </p>
+        </article>
+        <article class="card">
+          <span class="tag">COMPOSIÇÃO</span>
+          <h2>Sozinho ou junto de outros?</h2>
+          <p data-module-alone>
+            O módulo pode ser utilizado isoladamente ou combinado com outros
+            componentes do KOS, conforme a necessidade da operação.
+          </p>
+        </article>
+        <article class="card">
+          <span class="tag">INTEGRAÇÃO</span>
+          <h2>Combina bem com</h2>
+          <p data-module-companions>
+            Os módulos complementares serão apresentados aqui de acordo com a
+            função de cada módulo.
+          </p>
+        </article>
       </section>
 
       <section>
@@ -37,7 +74,10 @@
           <div>
             <div class="eyebrow">REFERÊNCIAS VISUAIS</div>
             <h2>Interfaces, aplicações e materiais</h2>
-            <p>Espaço reservado para imagens do módulo, interfaces, telas, aplicações, fluxos e outros materiais visuais.</p>
+            <p>
+              Espaço reservado para imagens do módulo, interfaces, telas,
+              aplicações, fluxos e outros materiais visuais.
+            </p>
           </div>
         </header>
         <div class="catalog" data-module-gallery></div>
@@ -46,41 +86,176 @@
       <section class="card">
         <span class="tag">STATUS</span>
         <h2>Aplicação</h2>
-        <p data-module-status>O módulo ainda não possui uma aplicação operacional publicada neste site. A estrutura desta página já está preparada para receber informações e referências futuras.</p>
+        <p data-module-status>
+          O módulo ainda não possui uma aplicação operacional publicada neste
+          site. A estrutura desta página já está preparada para receber
+          informações e referências futuras.
+        </p>
         <p><a class="button" href="kos.html">Voltar aos módulos</a></p>
       </section>
     </main>
 
     <script>
       const D = {
-        ERP: ["O KORCZAK ERP funciona como uma camada central de gestão empresarial, organizando informações e processos administrativos que atravessam diferentes áreas da empresa.", "Centraliza e organiza dados e rotinas administrativas, permitindo acompanhar processos, cadastros, operações e informações de gestão em uma estrutura integrada. Sua função é servir como uma base de gestão, evitando que cada área opere como uma ilha.", "Recomendamos posicioná-lo como uma das bases do ambiente corporativo, especialmente quando a empresa precisa conectar gestão administrativa a operações, vendas, estoque, financeiro e demais áreas.", "Pode funcionar sozinho como núcleo de gestão empresarial, mas tende a entregar mais valor quando recebe informações e fornece dados aos módulos especializados do KOS.", "FLOW, OPS, CRM, SALES, STOCK, FINANCE, FISCAL, DOCUMENTS e ANALYTICS."],
-        FLOW: ["O KORCZAK FLOW é a camada de automação que organiza sequências, regras, gatilhos e movimentações entre processos e módulos.", "Transforma processos definidos pela empresa em fluxos acompanháveis e automatizáveis, permitindo encaminhamentos, aprovações, condições, notificações e ações entre etapas.", "Recomendamos colocá-lo transversalmente à operação, conectado aos processos que possuem repetição, dependências, aprovações ou necessidade de automação.", "Pode ser utilizado para automatizar processos específicos, mas seu maior potencial aparece quando atua adjunto aos módulos que executam esses processos.", "ERP, OPS, CONNECT, CRM, SALES, STOCK, LOGISTICS, QUALITY, MAINTENANCE e DOCUMENTS."],
-        OPS: ["O KORCZAK OPS concentra a gestão da execução operacional e produtiva da empresa.", "Organiza atividades, ordens, etapas e acompanhamento da execução, dando à operação uma camada própria para controlar o que precisa ser realizado e o que está efetivamente acontecendo.", "Recomendamos posicioná-lo no centro da camada operacional, próximo das equipes, recursos, produção e execução dos processos.", "Pode operar como núcleo de uma operação mais simples, mas normalmente deve trabalhar junto de estoque, logística, qualidade, manutenção e ERP.", "ERP, FLOW, VISION, MOBILE, STOCK, LOGISTICS, QUALITY e MAINTENANCE."],
-        VISION: ["O KORCZAK VISION transforma informações operacionais e visuais em recursos para acompanhamento, identificação e apoio à execução.", "Pode receber imagens, sinais ou elementos visuais e utilizá-los em experiências de acompanhamento e computação visual, conforme a aplicação desenvolvida para cada operação.", "Recomendamos sua presença em ambientes onde a informação visual é relevante para operação, inspeção, acompanhamento ou tomada de decisão.", "Pode ser aplicado em projetos específicos, mas costuma funcionar melhor adjunto aos módulos responsáveis pelos dados e pela execução da operação.", "OPS, QUALITY, STOCK, LOGISTICS, MAINTENANCE, MOBILE e ANALYTICS."],
-        CONNECT: ["O KORCZAK CONNECT é a camada dedicada à comunicação entre sistemas, serviços, módulos e integrações externas.", "Organiza conexões e contratos de integração para que informações possam trafegar entre componentes de forma controlada, documentada e preparada para evolução.", "Recomendamos colocá-lo como camada transversal entre o KOS e sistemas externos ou entre módulos que precisem de contratos de comunicação bem definidos.", "Não é pensado como um módulo operacional isolado. Seu propósito é atuar como infraestrutura de conexão para os demais componentes.", "ERP, FLOW, CRM, SALES, COMMERCE, SCM, STOCK, LOGISTICS, FINANCE e sistemas externos."],
-        MOBILE: ["O KORCZAK MOBILE leva atividades e informações operacionais para dispositivos móveis utilizados pelas equipes.", "Apresenta tarefas, registros, consultas e ações adequadas ao uso em campo ou durante a execução, mantendo o trabalhador conectado aos processos definidos pela empresa.", "Recomendamos colocá-lo junto às equipes que trabalham fora de uma estação fixa ou que precisam registrar eventos diretamente no local da operação.", "Não é recomendado como solução isolada: ele funciona melhor como interface móvel dos módulos operacionais e administrativos necessários.", "OPS, STOCK, LOGISTICS, MAINTENANCE, QUALITY, SALES e ERP."],
-        CRM: ["O KORCZAK CRM organiza o relacionamento com clientes, contatos, histórico e informações necessárias para uma visão contínua da relação comercial.", "Mantém informações do relacionamento e permite acompanhar interações, oportunidades e contexto dos clientes ao longo do ciclo comercial.", "Recomendamos posicioná-lo na frente comercial da empresa, conectado às áreas que lidam diretamente com clientes e oportunidades.", "Pode ser utilizado sozinho para organizar relacionamento, mas seu uso integrado ao processo de vendas amplia a continuidade entre relacionamento e conversão.", "SALES, COMMERCE, ERP, FLOW, CONNECT e ANALYTICS."],
-        SALES: ["O KORCZAK SALES trata o processo comercial de vendas, desde a oportunidade até a evolução e acompanhamento da negociação.", "Organiza oportunidades, etapas comerciais, propostas, negociações, metas e acompanhamento do desempenho das vendas.", "Recomendamos colocá-lo junto à estrutura comercial, entre o relacionamento com clientes e os processos que efetivamente transformam oportunidades em negócios.", "Pode operar como ferramenta comercial independente, mas funciona melhor junto de CRM, COMMERCE e ERP quando a empresa possui um ciclo de vendas mais completo.", "CRM, COMMERCE, ERP, FLOW, FINANCE e ANALYTICS."],
-        COMMERCE: ["O KORCZAK COMMERCE é direcionado às operações de comércio, catálogo, canais e transações de venda.", "Organiza produtos e ofertas e suporta experiências comerciais e transacionais, podendo servir como camada para canais digitais e outras formas de comércio.", "Recomendamos colocá-lo na camada comercial/transacional, conectado ao processo de vendas e às estruturas que atendem pedidos, pagamentos e operação.", "Pode sustentar uma operação comercial específica, mas tende a depender de SALES, ERP, STOCK e LOGISTICS para completar o ciclo.", "CRM, SALES, ERP, STOCK, LOGISTICS, FINANCE, CONNECT e ANALYTICS."],
-        SCM: ["O KORCZAK SCM organiza a visão da cadeia de suprimentos e suas relações entre abastecimento, fornecedores, materiais e operação.", "Ajuda a planejar e acompanhar o fluxo de suprimentos, conectando necessidades internas a abastecimento e movimentação da cadeia.", "Recomendamos colocá-lo acima ou ao lado das estruturas de estoque e logística, formando uma camada de planejamento e coordenação da cadeia.", "Pode ser aplicado em uma operação de suprimentos específica, mas é mais eficiente quando conectado a STOCK, LOGISTICS, ERP e fornecedores.", "ERP, STOCK, LOGISTICS, OPS, CONNECT e ANALYTICS."],
-        STOCK: ["O KORCZAK STOCK controla a existência, movimentação e organização dos estoques da empresa.", "Registra entradas, saídas, saldos, movimentações e informações necessárias para que a empresa saiba o que possui, onde está e como seu estoque está evoluindo.", "Recomendamos posicioná-lo próximo da operação física e integrado à cadeia de suprimentos, logística, compras e produção.", "Pode atender uma operação de estoque simples, mas normalmente deve estar adjunto ao ERP e aos módulos que geram ou consomem movimentações.", "ERP, SCM, LOGISTICS, OPS, COMMERCE, MOBILE, QUALITY e ANALYTICS."],
-        LOGISTICS: ["O KORCZAK LOGISTICS gerencia movimentações e operações logísticas relacionadas ao fluxo físico de materiais e produtos.", "Organiza atividades logísticas, movimentações, etapas e acompanhamento do fluxo físico dentro ou fora da empresa.", "Recomendamos posicioná-lo entre estoque, operação, transporte e demais pontos onde exista movimentação física.", "Pode atender uma operação logística específica, mas seu funcionamento ideal depende da comunicação com estoque, SCM, OPS e ERP.", "STOCK, SCM, OPS, MOBILE, COMMERCE, ERP e ANALYTICS."],
-        QUALITY: ["O KORCZAK QUALITY concentra controles, registros e processos relacionados à qualidade e conformidade operacional.", "Permite estruturar critérios, inspeções, ocorrências, controles e acompanhamentos necessários para manter padrões definidos pela empresa.", "Recomendamos colocá-lo junto aos pontos da operação em que qualidade precisa ser verificada, registrada ou acompanhada.", "Pode operar de forma independente em uma estrutura de qualidade, mas é muito mais útil quando recebe eventos da operação e devolve controles aos processos.", "OPS, VISION, STOCK, LOGISTICS, MAINTENANCE, ERP, DOCUMENTS e AUDIT."],
-        MAINTENANCE: ["O KORCZAK MAINTENANCE organiza a gestão da manutenção de ativos, equipamentos e recursos utilizados pela empresa.", "Estrutura planos, chamados, intervenções, históricos e acompanhamento das atividades necessárias para manter ativos disponíveis e confiáveis.", "Recomendamos posicioná-lo próximo da operação, dos ativos e das equipes responsáveis por manutenção e disponibilidade.", "Pode atender uma estrutura de manutenção isolada, mas ganha valor quando integrado a OPS, MOBILE, STOCK e QUALITY.", "OPS, MOBILE, STOCK, QUALITY, VISION, ERP e ANALYTICS."],
-        PEOPLE: ["O KORCZAK PEOPLE organiza informações e processos relacionados às pessoas que fazem parte da operação e da estrutura empresarial.", "Pode centralizar dados organizacionais, estruturas, responsabilidades e processos relacionados às equipes, respeitando as necessidades e regras definidas pela empresa.", "Recomendamos colocá-lo junto à estrutura administrativa e de pessoas, conectado às áreas que dependem de equipes, funções e responsabilidades.", "Pode funcionar como base de organização de pessoas, mas seus dados podem alimentar processos do ERP, OPS e demais módulos.", "ERP, OPS, MOBILE, FLOW, FINANCE, DOCUMENTS e ANALYTICS."],
-        FINANCE: ["O KORCZAK FINANCE organiza as operações e informações financeiras da empresa.", "Apoia o acompanhamento de movimentações, controles financeiros, obrigações internas e visão econômica necessária à gestão.", "Recomendamos posicioná-lo na camada administrativa e financeira, conectado às áreas que geram receitas, despesas, pedidos e obrigações.", "Pode ser usado como núcleo financeiro, mas a integração com ERP, SALES, COMMERCE e FISCAL torna a visão financeira mais completa.", "ERP, SALES, COMMERCE, FISCAL, PEOPLE, DOCUMENTS e ANALYTICS."],
-        FISCAL: ["O KORCZAK FISCAL trata os processos e informações fiscais que acompanham as operações da empresa.", "Organiza dados, controles e rotinas fiscais relacionadas às operações que precisam ser registradas e acompanhadas conforme as regras aplicáveis.", "Recomendamos posicioná-lo próximo do financeiro e do ERP, recebendo informações das operações que possuem impacto fiscal.", "Pode atender uma estrutura fiscal específica, mas não é recomendado como solução isolada porque depende de dados gerados por outros processos.", "ERP, FINANCE, SALES, COMMERCE, STOCK, DOCUMENTS e AUDIT."],
-        BI: ["O KORCZAK BI apresenta indicadores e visões gerenciais para transformar dados operacionais em acompanhamento de desempenho.", "Consolida informações relevantes e apresenta indicadores, painéis e visões gerenciais que ajudam diferentes níveis da empresa a acompanhar resultados.", "Recomendamos colocá-lo como camada transversal de gestão, recebendo dados dos módulos que geram indicadores relevantes.", "Não é recomendado como solução isolada: seu valor depende da qualidade, disponibilidade e organização dos dados produzidos pelos demais módulos.", "ERP, OPS, SALES, STOCK, LOGISTICS, FINANCE, QUALITY, MAINTENANCE e ANALYTICS."],
-        ANALYTICS: ["O KORCZAK ANALYTICS amplia a camada analítica do KOS, trabalhando dados, análises, tendências e apoio à decisão.", "Utiliza dados provenientes dos processos e módulos para produzir análises mais profundas, cruzamentos, tendências e visões que apoiam decisões empresariais.", "Recomendamos posicioná-lo transversalmente, conectado às fontes de dados e aos módulos que precisam de análise ou previsão.", "Não é recomendado como módulo isolado, pois depende das fontes de dados da empresa. Seu papel é transformar dados existentes em conhecimento útil.", "ERP, BI, OPS, SALES, STOCK, LOGISTICS, FINANCE, QUALITY e MAINTENANCE."],
-        DOCUMENTS: ["O KORCZAK DOCUMENTS organiza documentos e informações documentais que precisam acompanhar os processos da empresa.", "Estrutura armazenamento, organização, consulta e rastreabilidade documental, permitindo que documentos sejam associados aos processos e registros correspondentes.", "Recomendamos utilizá-lo como camada documental transversal, acompanhando os módulos que geram ou exigem documentos.", "Pode funcionar sozinho como repositório e organização documental, mas sua maior utilidade aparece quando documentos ficam ligados aos processos empresariais.", "ERP, FLOW, QUALITY, AUDIT, FINANCE, FISCAL, PEOPLE e CONNECT."],
-        AUDIT: ["O KORCZAK AUDIT fornece uma camada de auditoria e rastreabilidade para acompanhar alterações, eventos e histórico dos processos.", "Registra e organiza evidências e históricos relevantes, permitindo entender o que ocorreu em processos e informações que exigem rastreabilidade.", "Recomendamos colocá-lo transversalmente, cobrindo os módulos e processos que exigem histórico, controle e capacidade de auditoria.", "Não é recomendado como ferramenta operacional isolada. Seu propósito é observar e registrar eventos produzidos pelos demais componentes.", "ERP, FLOW, QUALITY, FISCAL, FINANCE, DOCUMENTS, CONNECT e ANALYTICS."]
+        ERP: [
+          "O KORCZAK ERP funciona como uma camada central de gestão empresarial, organizando informações e processos administrativos que atravessam diferentes áreas da empresa.",
+          "Centraliza e organiza dados e rotinas administrativas, permitindo acompanhar processos, cadastros, operações e informações de gestão em uma estrutura integrada. Sua função é servir como uma base de gestão, evitando que cada área opere como uma ilha.",
+          "Recomendamos posicioná-lo como uma das bases do ambiente corporativo, especialmente quando a empresa precisa conectar gestão administrativa a operações, vendas, estoque, financeiro e demais áreas.",
+          "Pode funcionar sozinho como núcleo de gestão empresarial, mas tende a entregar mais valor quando recebe informações e fornece dados aos módulos especializados do KOS.",
+          "FLOW, OPS, CRM, SALES, STOCK, FINANCE, FISCAL, DOCUMENTS e ANALYTICS.",
+        ],
+        FLOW: [
+          "O KORCZAK FLOW é a camada de automação que organiza sequências, regras, gatilhos e movimentações entre processos e módulos.",
+          "Transforma processos definidos pela empresa em fluxos acompanháveis e automatizáveis, permitindo encaminhamentos, aprovações, condições, notificações e ações entre etapas.",
+          "Recomendamos colocá-lo transversalmente à operação, conectado aos processos que possuem repetição, dependências, aprovações ou necessidade de automação.",
+          "Pode ser utilizado para automatizar processos específicos, mas seu maior potencial aparece quando atua adjunto aos módulos que executam esses processos.",
+          "ERP, OPS, CONNECT, CRM, SALES, STOCK, LOGISTICS, QUALITY, MAINTENANCE e DOCUMENTS.",
+        ],
+        OPS: [
+          "O KORCZAK OPS concentra a gestão da execução operacional e produtiva da empresa.",
+          "Organiza atividades, ordens, etapas e acompanhamento da execução, dando à operação uma camada própria para controlar o que precisa ser realizado e o que está efetivamente acontecendo.",
+          "Recomendamos posicioná-lo no centro da camada operacional, próximo das equipes, recursos, produção e execução dos processos.",
+          "Pode operar como núcleo de uma operação mais simples, mas normalmente deve trabalhar junto de estoque, logística, qualidade, manutenção e ERP.",
+          "ERP, FLOW, VISION, MOBILE, STOCK, LOGISTICS, QUALITY e MAINTENANCE.",
+        ],
+        VISION: [
+          "O KORCZAK VISION transforma informações operacionais e visuais em recursos para acompanhamento, identificação e apoio à execução.",
+          "Pode receber imagens, sinais ou elementos visuais e utilizá-los em experiências de acompanhamento e computação visual, conforme a aplicação desenvolvida para cada operação.",
+          "Recomendamos sua presença em ambientes onde a informação visual é relevante para operação, inspeção, acompanhamento ou tomada de decisão.",
+          "Pode ser aplicado em projetos específicos, mas costuma funcionar melhor adjunto aos módulos responsáveis pelos dados e pela execução da operação.",
+          "OPS, QUALITY, STOCK, LOGISTICS, MAINTENANCE, MOBILE e ANALYTICS.",
+        ],
+        CONNECT: [
+          "O KORCZAK CONNECT é a camada dedicada à comunicação entre sistemas, serviços, módulos e integrações externas.",
+          "Organiza conexões e contratos de integração para que informações possam trafegar entre componentes de forma controlada, documentada e preparada para evolução.",
+          "Recomendamos colocá-lo como camada transversal entre o KOS e sistemas externos ou entre módulos que precisem de contratos de comunicação bem definidos.",
+          "Não é pensado como um módulo operacional isolado. Seu propósito é atuar como infraestrutura de conexão para os demais componentes.",
+          "ERP, FLOW, CRM, SALES, COMMERCE, SCM, STOCK, LOGISTICS, FINANCE e sistemas externos.",
+        ],
+        MOBILE: [
+          "O KORCZAK MOBILE leva atividades e informações operacionais para dispositivos móveis utilizados pelas equipes.",
+          "Apresenta tarefas, registros, consultas e ações adequadas ao uso em campo ou durante a execução, mantendo o trabalhador conectado aos processos definidos pela empresa.",
+          "Recomendamos colocá-lo junto às equipes que trabalham fora de uma estação fixa ou que precisam registrar eventos diretamente no local da operação.",
+          "Não é recomendado como solução isolada: ele funciona melhor como interface móvel dos módulos operacionais e administrativos necessários.",
+          "OPS, STOCK, LOGISTICS, MAINTENANCE, QUALITY, SALES e ERP.",
+        ],
+        CRM: [
+          "O KORCZAK CRM organiza o relacionamento com clientes, contatos, histórico e informações necessárias para uma visão contínua da relação comercial.",
+          "Mantém informações do relacionamento e permite acompanhar interações, oportunidades e contexto dos clientes ao longo do ciclo comercial.",
+          "Recomendamos posicioná-lo na frente comercial da empresa, conectado às áreas que lidam diretamente com clientes e oportunidades.",
+          "Pode ser utilizado sozinho para organizar relacionamento, mas seu uso integrado ao processo de vendas amplia a continuidade entre relacionamento e conversão.",
+          "SALES, COMMERCE, ERP, FLOW, CONNECT e ANALYTICS.",
+        ],
+        SALES: [
+          "O KORCZAK SALES trata o processo comercial de vendas, desde a oportunidade até a evolução e acompanhamento da negociação.",
+          "Organiza oportunidades, etapas comerciais, propostas, negociações, metas e acompanhamento do desempenho das vendas.",
+          "Recomendamos colocá-lo junto à estrutura comercial, entre o relacionamento com clientes e os processos que efetivamente transformam oportunidades em negócios.",
+          "Pode operar como ferramenta comercial independente, mas funciona melhor junto de CRM, COMMERCE e ERP quando a empresa possui um ciclo de vendas mais completo.",
+          "CRM, COMMERCE, ERP, FLOW, FINANCE e ANALYTICS.",
+        ],
+        COMMERCE: [
+          "O KORCZAK COMMERCE é direcionado às operações de comércio, catálogo, canais e transações de venda.",
+          "Organiza produtos e ofertas e suporta experiências comerciais e transacionais, podendo servir como camada para canais digitais e outras formas de comércio.",
+          "Recomendamos colocá-lo na camada comercial/transacional, conectado ao processo de vendas e às estruturas que atendem pedidos, pagamentos e operação.",
+          "Pode sustentar uma operação comercial específica, mas tende a depender de SALES, ERP, STOCK e LOGISTICS para completar o ciclo.",
+          "CRM, SALES, ERP, STOCK, LOGISTICS, FINANCE, CONNECT e ANALYTICS.",
+        ],
+        SCM: [
+          "O KORCZAK SCM organiza a visão da cadeia de suprimentos e suas relações entre abastecimento, fornecedores, materiais e operação.",
+          "Ajuda a planejar e acompanhar o fluxo de suprimentos, conectando necessidades internas a abastecimento e movimentação da cadeia.",
+          "Recomendamos colocá-lo acima ou ao lado das estruturas de estoque e logística, formando uma camada de planejamento e coordenação da cadeia.",
+          "Pode ser aplicado em uma operação de suprimentos específica, mas é mais eficiente quando conectado a STOCK, LOGISTICS, ERP e fornecedores.",
+          "ERP, STOCK, LOGISTICS, OPS, CONNECT e ANALYTICS.",
+        ],
+        STOCK: [
+          "O KORCZAK STOCK controla a existência, movimentação e organização dos estoques da empresa.",
+          "Registra entradas, saídas, saldos, movimentações e informações necessárias para que a empresa saiba o que possui, onde está e como seu estoque está evoluindo.",
+          "Recomendamos posicioná-lo próximo da operação física e integrado à cadeia de suprimentos, logística, compras e produção.",
+          "Pode atender uma operação de estoque simples, mas normalmente deve estar adjunto ao ERP e aos módulos que geram ou consomem movimentações.",
+          "ERP, SCM, LOGISTICS, OPS, COMMERCE, MOBILE, QUALITY e ANALYTICS.",
+        ],
+        LOGISTICS: [
+          "O KORCZAK LOGISTICS gerencia movimentações e operações logísticas relacionadas ao fluxo físico de materiais e produtos.",
+          "Organiza atividades logísticas, movimentações, etapas e acompanhamento do fluxo físico dentro ou fora da empresa.",
+          "Recomendamos posicioná-lo entre estoque, operação, transporte e demais pontos onde exista movimentação física.",
+          "Pode atender uma operação logística específica, mas seu funcionamento ideal depende da comunicação com estoque, SCM, OPS e ERP.",
+          "STOCK, SCM, OPS, MOBILE, COMMERCE, ERP e ANALYTICS.",
+        ],
+        QUALITY: [
+          "O KORCZAK QUALITY concentra controles, registros e processos relacionados à qualidade e conformidade operacional.",
+          "Permite estruturar critérios, inspeções, ocorrências, controles e acompanhamentos necessários para manter padrões definidos pela empresa.",
+          "Recomendamos colocá-lo junto aos pontos da operação em que qualidade precisa ser verificada, registrada ou acompanhada.",
+          "Pode operar de forma independente em uma estrutura de qualidade, mas é muito mais útil quando recebe eventos da operação e devolve controles aos processos.",
+          "OPS, VISION, STOCK, LOGISTICS, MAINTENANCE, ERP, DOCUMENTS e AUDIT.",
+        ],
+        MAINTENANCE: [
+          "O KORCZAK MAINTENANCE organiza a gestão da manutenção de ativos, equipamentos e recursos utilizados pela empresa.",
+          "Estrutura planos, chamados, intervenções, históricos e acompanhamento das atividades necessárias para manter ativos disponíveis e confiáveis.",
+          "Recomendamos posicioná-lo próximo da operação, dos ativos e das equipes responsáveis por manutenção e disponibilidade.",
+          "Pode atender uma estrutura de manutenção isolada, mas ganha valor quando integrado a OPS, MOBILE, STOCK e QUALITY.",
+          "OPS, MOBILE, STOCK, QUALITY, VISION, ERP e ANALYTICS.",
+        ],
+        PEOPLE: [
+          "O KORCZAK PEOPLE organiza informações e processos relacionados às pessoas que fazem parte da operação e da estrutura empresarial.",
+          "Pode centralizar dados organizacionais, estruturas, responsabilidades e processos relacionados às equipes, respeitando as necessidades e regras definidas pela empresa.",
+          "Recomendamos colocá-lo junto à estrutura administrativa e de pessoas, conectado às áreas que dependem de equipes, funções e responsabilidades.",
+          "Pode funcionar como base de organização de pessoas, mas seus dados podem alimentar processos do ERP, OPS e demais módulos.",
+          "ERP, OPS, MOBILE, FLOW, FINANCE, DOCUMENTS e ANALYTICS.",
+        ],
+        FINANCE: [
+          "O KORCZAK FINANCE organiza as operações e informações financeiras da empresa.",
+          "Apoia o acompanhamento de movimentações, controles financeiros, obrigações internas e visão econômica necessária à gestão.",
+          "Recomendamos posicioná-lo na camada administrativa e financeira, conectado às áreas que geram receitas, despesas, pedidos e obrigações.",
+          "Pode ser usado como núcleo financeiro, mas a integração com ERP, SALES, COMMERCE e FISCAL torna a visão financeira mais completa.",
+          "ERP, SALES, COMMERCE, FISCAL, PEOPLE, DOCUMENTS e ANALYTICS.",
+        ],
+        FISCAL: [
+          "O KORCZAK FISCAL trata os processos e informações fiscais que acompanham as operações da empresa.",
+          "Organiza dados, controles e rotinas fiscais relacionadas às operações que precisam ser registradas e acompanhadas conforme as regras aplicáveis.",
+          "Recomendamos posicioná-lo próximo do financeiro e do ERP, recebendo informações das operações que possuem impacto fiscal.",
+          "Pode atender uma estrutura fiscal específica, mas não é recomendado como solução isolada porque depende de dados gerados por outros processos.",
+          "ERP, FINANCE, SALES, COMMERCE, STOCK, DOCUMENTS e AUDIT.",
+        ],
+        BI: [
+          "O KORCZAK BI apresenta indicadores e visões gerenciais para transformar dados operacionais em acompanhamento de desempenho.",
+          "Consolida informações relevantes e apresenta indicadores, painéis e visões gerenciais que ajudam diferentes níveis da empresa a acompanhar resultados.",
+          "Recomendamos colocá-lo como camada transversal de gestão, recebendo dados dos módulos que geram indicadores relevantes.",
+          "Não é recomendado como solução isolada: seu valor depende da qualidade, disponibilidade e organização dos dados produzidos pelos demais módulos.",
+          "ERP, OPS, SALES, STOCK, LOGISTICS, FINANCE, QUALITY, MAINTENANCE e ANALYTICS.",
+        ],
+        ANALYTICS: [
+          "O KORCZAK ANALYTICS amplia a camada analítica do KOS, trabalhando dados, análises, tendências e apoio à decisão.",
+          "Utiliza dados provenientes dos processos e módulos para produzir análises mais profundas, cruzamentos, tendências e visões que apoiam decisões empresariais.",
+          "Recomendamos posicioná-lo transversalmente, conectado às fontes de dados e aos módulos que precisam de análise ou previsão.",
+          "Não é recomendado como módulo isolado, pois depende das fontes de dados da empresa. Seu papel é transformar dados existentes em conhecimento útil.",
+          "ERP, BI, OPS, SALES, STOCK, LOGISTICS, FINANCE, QUALITY e MAINTENANCE.",
+        ],
+        DOCUMENTS: [
+          "O KORCZAK DOCUMENTS organiza documentos e informações documentais que precisam acompanhar os processos da empresa.",
+          "Estrutura armazenamento, organização, consulta e rastreabilidade documental, permitindo que documentos sejam associados aos processos e registros correspondentes.",
+          "Recomendamos utilizá-lo como camada documental transversal, acompanhando os módulos que geram ou exigem documentos.",
+          "Pode funcionar sozinho como repositório e organização documental, mas sua maior utilidade aparece quando documentos ficam ligados aos processos empresariais.",
+          "ERP, FLOW, QUALITY, AUDIT, FINANCE, FISCAL, PEOPLE e CONNECT.",
+        ],
+        AUDIT: [
+          "O KORCZAK AUDIT fornece uma camada de auditoria e rastreabilidade para acompanhar alterações, eventos e histórico dos processos.",
+          "Registra e organiza evidências e históricos relevantes, permitindo entender o que ocorreu em processos e informações que exigem rastreabilidade.",
+          "Recomendamos colocá-lo transversalmente, cobrindo os módulos e processos que exigem histórico, controle e capacidade de auditoria.",
+          "Não é recomendado como ferramenta operacional isolada. Seu propósito é observar e registrar eventos produzidos pelos demais componentes.",
+          "ERP, FLOW, QUALITY, FISCAL, FINANCE, DOCUMENTS, CONNECT e ANALYTICS.",
+        ],
       };
 
       window.addEventListener("DOMContentLoaded", () => {
-        const selected = new URLSearchParams(window.location.search).get("modulo")?.toUpperCase();
+        const selected = new URLSearchParams(window.location.search)
+          .get("modulo")
+          ?.toUpperCase();
         const detail = D[selected];
         if (!detail) return;
-        const set = (selector, value) => { const element = document.querySelector(selector); if (element) element.textContent = value; };
+        const set = (selector, value) => {
+          const element = document.querySelector(selector);
+          if (element) element.textContent = value;
+        };
         set("[data-module-overview]", detail[0]);
         set("[data-module-how]", detail[1]);
         set("[data-module-placement]", detail[2]);
